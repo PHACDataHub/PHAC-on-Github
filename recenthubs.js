@@ -10,24 +10,6 @@ requestUserRepos('PHACDataHub')
     // iterate through parsed response
     .then(data => {
         for (let i in data) {
-            // Log the repo name
-            console.log('Repo:', data[i].name);
-
-            // Log the repo description
-            console.log('Description:', data[i].description);
-
-            // Log the repo url
-            console.log('URL:', data[i].html_url);
-
-            // Add a separator between each repo
-            console.log('Date Created:', data[i].created_at)
-
-            // Add a separator between each repo
-            console.log('Updated:', data[i].updated_at)
-
-            // Add a separator between each repo
-            console.log('=========================')
-
 
             let ul = document.getElementById('userRepos');
 
