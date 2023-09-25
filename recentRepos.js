@@ -53,10 +53,20 @@ async function fetchURLs() {
                 li.classList.add('list-group-item')
 
                 // Create the html markup for each li
-                li.innerHTML = (`<p><img class="avatar" src="${parsedData.avatar}" /> ${parsedData.org} </p>
-        <p><strong>Repo:</strong> <a href="#"> ${parsedData.repo}</a></p>
-        <p><strong>Description:</strong> ${parsedData.description}</p>
-        <p><strong>Updated:</strong> ${dayjs().to(dayjs(parsedData.updated))}</p>
+                li.innerHTML = (`
+                <h3><a href="#"> ${parsedData.repo}</a></h3>
+                <p>${parsedData.description}</p>
+                <div class="repo-bottom">
+                    <div class="row justify-content-start">
+                        <div class="col-sm">
+                        Updated ${dayjs().to(dayjs(parsedData.updated))}
+                        </div>
+                        <div class="col-sm">
+                        <img class="avatar" src="${parsedData.avatar}" />${parsedData.org}
+                        </div>
+                    </div>
+                </div>
+
         `);
                 // Append each li to the ul
                 ul.appendChild(li);
