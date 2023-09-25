@@ -36,31 +36,31 @@ async function fetchURLs() {
             return b.updated.localeCompare(a.updated);
         });
 
-        //console.log(parsedData)
 
+        // Now display the data
         async function displayData() {
-            console.log("attempting to display the data...")
-        
-            //parsedData.forEach((parsedData) => console.log(parsedData.org));
+
+
             let ul = document.getElementById('userRepos');
             parsedData.forEach((parsedData) => {
+
                 //console.log(parsedData);
                 //console.log("adding " + parsedData.repo + " to page");
                 // Create variable that will create li's to be added to ul
                 let li = document.createElement('li');
-        
+
                 // Add Bootstrap list item class to each li
                 li.classList.add('list-group-item')
-        
+
                 // Create the html markup for each li
                 li.innerHTML = (`<p><img class="avatar" src="${parsedData.avatar}" /> ${parsedData.org} </p>
         <p><strong>Repo:</strong> <a href="#"> ${parsedData.repo}</a></p>
         <p><strong>Description:</strong> ${parsedData.description}</p>
-        <p><strong>Updated:</strong> ${parsedData.updated}</p>
+        <p><strong>Updated:</strong> ${dayjs().to(dayjs(parsedData.updated))}</p>
         `);
                 // Append each li to the ul
                 ul.appendChild(li);
-        
+
             });
         };
         displayData();
