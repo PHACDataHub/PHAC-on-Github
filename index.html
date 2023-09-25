@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>githubs of phac</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/css/theme.min.css" />
 
@@ -14,7 +15,7 @@
         }
     </style>
 
-    
+
 
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/relativeTime.js"></script>
@@ -23,12 +24,18 @@
 </head>
 
 <body>
-
-    <h3 class="text-center mt-5">GitHubs of PHAC</h3>
-
-    <ul id="userRepos" class="list-group mx-auto mb-5" style="width: 500px">
-
-    </ul>
+    <main>
+        <div class="container">
+            <h1 id="wb-cont" property="name">Recently-updated public GitHub repositories from the Public Health Agency
+                of
+                Canada</h1>
+            <p>The following is a list of Github repositories from PHAC. The list shows recently-updated projects from
+                across the Agency.</p>
+    
+        <ul id="userRepos" class="list-group  list-unstyled wb-eqht-grd wb-filter mrgn-tp-md pb-4 wb-init wb-filter-inited">
+        </ul>
+    </div>
+    </main>
 
     <script src="recentRepos.js"></script>
 
