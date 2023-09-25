@@ -54,7 +54,7 @@ async function fetchURLs() {
 
                 // Create the html markup for each li
                 li.innerHTML = (`
-                <h3 class="mrgn-tp-md mrgn-rght-md mrgn-bttm-md mrgn-lft-md"><a href="#"> ${parsedData.repo}</a></h3>
+                <h3 class="mrgn-tp-md mrgn-rght-md mrgn-bttm-md"><a href="#"> ${parsedData.repo}</a></h3>
                 <p>${parsedData.description}</p>
                 <div class="repo-bottom">
                     <div class="row justify-content-start">
