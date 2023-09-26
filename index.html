@@ -9,6 +9,10 @@
 
     <link rel="stylesheet" href="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/css/theme.min.css" />
 
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/relativeTime.js"></script>
+    <script>dayjs.extend(window.dayjs_plugin_relativeTime)</script>
+
     <style>
         .avatar {
             max-width: 2rem;
@@ -17,9 +21,6 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/relativeTime.js"></script>
-    <script>dayjs.extend(window.dayjs_plugin_relativeTime)</script>
 
 </head>
 
@@ -32,7 +33,7 @@
             <p>The following is a list of Github repositories from PHAC. The list shows recently-updated projects from
                 across the Agency.</p>
     
-        <ul id="userRepos" class="list-group  list-unstyled wb-eqht-grd wb-filter mrgn-tp-md pb-4 wb-init wb-filter-inited">
+        <ul id="userRepos" class="list-group list-unstyled wb-eqht-grd wb-filter mrgn-tp-md pb-4 wb-init wb-filter-inited">
         </ul>
     </div>
     </main>

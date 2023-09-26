@@ -21,16 +21,18 @@ async function fetchURLs() {
 
         ]);
 
+        console.log(data)
+
         let parsedData = [];
         // loop through each item in the data, parse out what I want
         for (var i of data) {
             //console.log(`RESPONSE ITEM \n`);
             for (var obj of i) {
-                parsedData.push({ org: obj.owner.login, avatar: obj.owner.avatar_url, repo: obj.name, description: obj.description, updated: obj.updated_at });
+                parsedData.push({ org: obj.owner.login, avatar: obj.owner.avatar_url, repo: obj.name, repoUrl: obj.html_url, description: obj.description, updated: obj.updated_at });
             }
 
         }
-
+        console.log(parsedData)
         // sorts by date
         parsedData.sort(function (a, b) {
             return b.updated.localeCompare(a.updated);
@@ -54,7 +56,7 @@ async function fetchURLs() {
 
                 // Create the html markup for each li
                 li.innerHTML = (`
-                <h3 class="mrgn-tp-md mrgn-rght-md mrgn-bttm-md"><a href="#"> ${parsedData.repo}</a></h3>
+                <h3 class="mrgn-tp-md mrgn-rght-md mrgn-bttm-md"><a href="${parsedData.repoUrl}"> ${parsedData.repo}</a></h3>
                 <p>${parsedData.description}</p>
                 <div class="repo-bottom">
                     <div class="row justify-content-start">
