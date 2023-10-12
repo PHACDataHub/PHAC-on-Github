@@ -21,27 +21,63 @@ async function fetchURLs() {
 
         ]);
 
-        console.log(data)
+        //console.log(data)
 
         let parsedData = [];
+
         // loop through each item in the data, parse out what I want
         for (var i of data) {
             //console.log(`RESPONSE ITEM \n`);
             for (var obj of i) {
-                parsedData.push({ org: obj.owner.login, avatar: obj.owner.avatar_url, repo: obj.name, repoUrl: obj.html_url, description: obj.description, updated: obj.updated_at });
+                parsedData.push({ org: obj.owner.login, orgUrl: obj.owner.html_url, avatar: obj.owner.avatar_url, repo: obj.name, repoUrl: obj.html_url, description: obj.description, updated: obj.updated_at });
             }
-
         }
-        console.log(parsedData)
+
         // sorts by date
         parsedData.sort(function (a, b) {
             return b.updated.localeCompare(a.updated);
         });
 
 
+        // filter out older repos
+        parsedData = parsedData.filter(d => {
+            return (dayjs().subtract(6, 'month').isBefore(dayjs(d.updated)) == true);
+        });
+
+        //console.log(parsedData)
+
+        // new array with unique orgs
+        // loop through each item in data and pull out the orgs
+        let orgsUnique = []
+        for (var i of data) {
+                orgsUnique.push({ org: i[0].owner.login, orgUrl: i[0].owner.html_url, avatar: i[0].owner.avatar_url});
+        }
+
+        console.log(orgsUnique)
+
+        //display orgs
+        async function displayOrgs() {
+            let ul = document.getElementById('orgs');
+            orgsUnique.forEach((orgsUnique) => {
+
+                // Create variable that will create li's to be added to ul
+                let li = document.createElement('li');
+
+                // Add Bootstrap list item class to each li
+                li.classList.add('featuredOrg')
+
+                // Create the html markup for each li
+                li.innerHTML = (`
+                <h3 class="mrgn-tp-md mrgn-rght-md mrgn-bttm-md"><a class="fltopts btn btn-default" href="${orgsUnique.orgUrl}"> <img class="avatar" src="${orgsUnique.avatar}" /> ${orgsUnique.org}</a></h3>`);
+                // Append each li to the ul
+                ul.appendChild(li);
+
+            });
+        }
+        displayOrgs()
+
         // Now display the data
         async function displayData() {
-
 
             let ul = document.getElementById('userRepos');
             parsedData.forEach((parsedData) => {
@@ -52,7 +88,7 @@ async function fetchURLs() {
                 let li = document.createElement('li');
 
                 // Add Bootstrap list item class to each li
-                li.classList.add('list-group-item','col-xs-12','col-md-6','mrgn-tp-md','mrgn-bttm-md')
+                li.classList.add('list-group-item', 'col-xs-12', 'col-md-6', 'mrgn-tp-md', 'mrgn-bttm-md')
 
                 // Create the html markup for each li
                 li.innerHTML = (`

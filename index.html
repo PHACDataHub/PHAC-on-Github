@@ -17,6 +17,16 @@
         .avatar {
             max-width: 2rem;
         }
+        .featuredOrg {
+            list-style:none;
+        }
+        .featuredOrg a {
+            text-decoration:none;
+        }
+        .featuredOrg a:visited {
+            color: #284162;
+            text-decoration:none;
+        }
     </style>
 
 
@@ -27,15 +37,20 @@
 <body>
     <main>
         <div class="container">
-            <h1 id="wb-cont" property="name">Recently-updated public GitHub repositories from the Public Health Agency
-                of
-                Canada</h1>
+            <h1 id="wb-cont" property="name">Recently-updated public GitHub repositories from the Public Health Agency of Canada</h1>
             <p>The following is a list of Github repositories from PHAC. The list shows recently-updated projects from
                 across the Agency.</p>
-    
-        <ul id="userRepos" class="list-group list-unstyled wb-eqht-grd wb-filter mrgn-tp-md pb-4 wb-init wb-filter-inited">
-        </ul>
-    </div>
+
+            Filter by Github organization (not yet functional):
+            <ul id="orgs" class="list-inline wb-init wb-actionmng-inited"></ul>
+
+
+
+
+            <ul id="userRepos"
+                class="list-group list-unstyled wb-eqht-grd wb-filter mrgn-tp-md pb-4 wb-init wb-filter-inited">
+            </ul>
+        </div>
     </main>
 
     <script src="recentRepos.js"></script>
