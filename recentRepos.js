@@ -88,7 +88,7 @@ async function fetchURLs() {
                 let li = document.createElement('li');
 
                 // Add Bootstrap list item class to each li
-                li.classList.add('list-group-item', 'col-xs-12', 'col-md-6', 'mrgn-tp-md', 'mrgn-bttm-md')
+                li.classList.add('list-group-item', 'col-xs-12', 'mrgn-tp-md', 'mrgn-bttm-md')
 
                 // Create the html markup for each li
                 li.innerHTML = (`

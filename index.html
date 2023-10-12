@@ -8,10 +8,13 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/css/theme.min.css" />
+    <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/css/theme.min.css">
 
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/relativeTime.js"></script>
     <script>dayjs.extend(window.dayjs_plugin_relativeTime)</script>
+
+
 
     <style>
         .avatar {
@@ -35,13 +38,14 @@
 </head>
 
 <body>
+
     <main>
         <div class="container">
-            <h1 id="wb-cont" property="name">Recently-updated public GitHub repositories from the Public Health Agency of Canada</h1>
-            <p>The following is a list of Github repositories from PHAC. The list shows recently-updated projects from
-                across the Agency.</p>
+            <h1 id="wb-cont" class="gc-thickline" property="name">Recently-updated public GitHub repositories from the Public Health Agency of Canada</h1>
+            <p>Below is a list of GitHub repositories that we're working on at the Public Health Agency of Canada.</p>
+            <p>GitHub is a code hosting platform that lets us work together on projects from anywhere. Each repository below contains a project that has been updated within the last 6 months. Many of these projects are works in progress, some are experimental. As such they may lack documentation and will be presented in the language that the team is working in.</p>
 
-            Filter by Github organization (not yet functional):
+            <p>Filter by GitHub organization (not yet functional):</p>
             <ul id="orgs" class="list-inline wb-init wb-actionmng-inited"></ul>
 
 
